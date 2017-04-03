@@ -38,7 +38,7 @@ Home Page
 ![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/home_1.png)
 
 Wordle Cloud generated according to the given date range.
-![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/home_2.PNG)
+![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/blob/master/home_2.PNG)
 
 We can see the word cloud generated for daily,monthly and yearly.
 ![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/home_3.png)
