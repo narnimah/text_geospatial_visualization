@@ -35,25 +35,25 @@ Server : wamp server
 
 SCREENSHOTS
 Home Page 
-![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/home_1.png)
+![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/blob/master/home_1.JPG)
 
 Wordle Cloud generated according to the given date range.
 ![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/blob/master/home_2.PNG)
 
 We can see the word cloud generated for daily,monthly and yearly.
-![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/home_3.png)
+![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/blob/master/home_3.PNG)
 
 On hovering the mouse over the wordle cloud,the words in the cloud get higlighted.
-![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/home_4.png)
+![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/blob/master/home_4.png)
 
 On clicking on a particular word in the cloud,the time series for the word selected is generated.
-![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/home_5.png)
+![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/blob/master/home_5.PNG)
 
 On hovering the mouse over the time series,we see that the term name and frequency displayed,also it keeps dynamically changing as as we hover over the time range.
-![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/home_6.png)
+![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/blob/master/home_6.png)
 
 On clicking on the relationship button and selecting a word in the cloud.We have the relationship diagram generated. It represents the relationship of the selected word with 50 other words that are most frequently related to it.This happens dynamically.
-![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/home_7.png)
+![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/blob/master/home_7.png)
 
 On hovering over a particular relation in the diagram,the other arcs in the arc diagram become invisble making it easier to fin whivh are the connected words.
-![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/home_8.png)
+![ScreenShot](https://github.com/narnimah/text_geospatial_visualization/blob/master/home_8.png)
