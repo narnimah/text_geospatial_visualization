@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CS5331 Project: Text and Geospatial visualization</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <script>
+        var isRelationshipActive = false;
+        function toggle(portion) {
+            //console.log(portion);
+            if (portion != 'ts') {
+                isRelationshipActive = true;
+                $('#chart').addClass('hidden');
+                $('#relationships').removeClass('hidden');
+            } else if (portion == 'ts') {
+                isRelationshipActive = false;
+                $('#chart').removeClass('hidden');
+                $('#relationships').addClass('hidden');
+            }
+        }
+
+        function toggler(divId) {
+            $("#" + divId).toggleClass('hidden');
+        }
+    </script>
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Project: Text and Geospatial visualization</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll">
+                        <a href="#page-top">Home</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#findings">Wikinews</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#findings">Huffington</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section class="graph">
+        <div class="container">
+            <div class="row"> &nbsp; </div>
+            <div class="row text-right">
+                <button type="button" onclick="toggle('ts')" class="btn btn-default">Time Series</button>
+                <button type="button" onclick="toggle('rs')" class="btn btn-default">Relationships</button>
+            </div>
+            <div class="row" id="year-series">
+                <div class="col-lg-4">
+                    <div id="choices" class="text-center">
+                        <b>Filter by date</b>
+                        <hr>
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Start Date</label>
+                                <div class="col-md-4">
+                                    <select id="start_month" class="col-md-12 form-control" >
+                                        <option value="01">Jan</option>
+                                        <option value="02">Feb</option>
+                                        <option value="03">Mar</option>
+                                        <option value="04">Apr</option>
+                                        <option value="05">Mar</option>
+                                        <option value="06">Jun</option>
+                                        <option value="07">Jul</option>
+                                        <option value="08">Aug</option>
+                                        <option value="09">Sep</option>
+                                        <option value="10">Oct</option>
+                                        <option value="11">Nov</option>
+                                        <option value="12">Dec</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <select id="start_year" class="col-md-12 form-control" >
+                                        <option value="2004">  2004 </option>
+                                        <option value="2005">2005</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">End Date</label>
+                                <div class="col-md-4">
+                                    <select id="end_month" class="col-md-3 form-control" >
+                                        <option value="01">Jan</option>
+                                        <option value="02">Feb</option>
+                                        <option value="03">Mar</option>
+                                        <option value="04">Apr</option>
+                                        <option value="05">Mar</option>
+                                        <option value="06">Jun</option>
+                                        <option value="07">Jul</option>
+                                        <option value="08">Aug</option>
+                                        <option value="09">Sep</option>
+                                        <option value="10">Oct</option>
+                                        <option value="11">Nov</option>
+                                        <option value="12">Dec</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <select id="end_year" class="form-control" >
+                                        <option value="2004">  2004 </option>
+                                        <option value="2005">2005</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-right"><br>
+                            <button type="button" onclick="searchPeriod()" class="btn btn-primary">Search</button>
+                        </div>
+
+                        <hr>
+                    </div>
+                    <div id="cloud-svg">
+
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div id="chart">
+                            <h4 class="text-center">Frequency of term on Wikinews</h4>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="relationships" class="hidden">
+                            <h4 class="text-center">Term Relationships</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="findings" class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Visualization Project by Richard Matovu, Nikitha Mahesh and Bhavya Batra
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!-- load the d3.js library -->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="js/d3.layout.cloud.js"></script>
+    <script src="js/terms_series.js"></script>
+    <script src="js/arc_diagram.js"></script>
+    
+    <script type="text/javascript">
+
+        function formatDate(d) {
+                month = '' + (d.getMonth() + 1);
+                if (month.length < 2) month = '0' + month;
+                year = d.getFullYear();
+                return [year, month, '01'].join('');
+        }
+
+        function searchPeriod() {
+            var sMonth = start_month.value;
+            var sYear = start_year.value;
+            var eMonth = end_month.value;
+            var eYear = end_year.value;
+
+            // console.log(sMonth);
+            sDate = new Date(sYear + '-' + sMonth + '-' + '01');
+            eDate = new Date(eYear + '-' + eMonth + '-' + '01');
+
+            var top_terms = getTopTermsFreq(formatDate(sDate), formatDate(eDate) );
+            
+            //wordCloud(top_terms);
+            var myWordCloud = wordCloud('#cloud-svg');
+            
+            //Start cycling through the demo data
+            showNewWords(myWordCloud, top_terms);
+
+            top_terms_series = getTopTermsTimeSeries(fbDate, feDate, top_terms);
+
+            for(var term in top_terms_series){
+                dataArray.push(top_terms_series[term]);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
