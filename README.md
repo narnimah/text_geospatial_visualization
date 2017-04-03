@@ -2,7 +2,7 @@
 
 Please click to watch the overview video: https://youtu.be/1Yc1f2Zfgko
 
-Weblink: https://matrich.github.io/CS5331Project2/index.html 
+Weblink: https://narnimah.github.io/text_geospatial_visualization/index.html
 
 Major Features:
 
